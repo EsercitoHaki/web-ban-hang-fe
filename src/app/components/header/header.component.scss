@@ -3,25 +3,91 @@ header {
     color: rgb(173, 178, 203);
 }
 
+.header-logo svg {
+    width: 140px;
+
+}
+
 .navbar {
     background-color: rgba(0, 0, 0, 0) !important;
 }
 
 .navbar .container {
     background-color: rgba(0, 0, 0, 0) !important;
+
+    .group-navigation-icon {
+        display: flex;
+        column-gap: 1rem;
+
+        .btn-navigation {
+            background-image: linear-gradient(to right, #D434B0, #8029FC);
+            padding: .5rem;
+            display: flex;
+            justify-items: center;
+            align-items: center;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+            border-radius: 6px;
+            background-color: #f9f9f9;
+            padding-right: 0.5rem;
+            background-image: linear-gradient(to right, #D434B0, #8029FC);
+
+            .search-input {
+                flex: 1;
+                opacity: 0;
+                width: 0;
+                padding: 0;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                transition: opacity 0.3s ease, width 0.3s ease, padding 0.3s ease;
+
+                &.active {
+                    opacity: 1;
+                    width: 200px;
+                    padding: 4px 8px;
+                }
+            }
+
+            .search-icon {
+                font-size: 20px;
+                cursor: pointer;
+                padding-left: 0.3rem;
+            }
+
+            &.active .search-input {
+                opacity: 1;
+                width: 150px;
+                padding: 4px 8px;
+            }
+        }
+    }
 }
 
 .navbar .container .navbar-brand {
     color: rgb(173, 178, 203);
 }
 
-.navbar .container .navbar-nav .nav-link {
-    color: rgb(173, 178, 203);
-    border-radius: 18px;
-    padding: 8px 16px;
-}
 
-.navbar .container .navbar-nav .nav-link.active {
-    background-color: rgb(127, 68, 255) !important;
-    color: white !important;
+
+.navbar .container .navbar-nav {
+    display: flex;
+    padding-left: .5rem;
+    padding: 1rem 1rem;
+
+    .nav-link {
+        color: rgb(173, 178, 203);
+        border-radius: 18px;
+        padding: 8px 16px;
+    }
+
+    .nav-link.active {
+        background-color: rgb(127, 68, 255) !important;
+        color: white !important;
+    }
 }
