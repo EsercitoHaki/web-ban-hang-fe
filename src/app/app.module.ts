@@ -18,7 +18,7 @@ import {
 import { TokenInterceptor } from './interceptors/token.interceptors';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app/app.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 
 @NgModule({
@@ -32,7 +32,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     OrderDetailComponent, 
     LoginComponent, 
     RegisterComponent, 
-    AppComponent, UserProfileComponent
+    AppComponent, 
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
