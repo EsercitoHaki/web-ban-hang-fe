@@ -5,15 +5,20 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DetailProductComponent } from './components/detail-product/detail-product.component';
 import { OrderComponent } from './components/order/order.component';
-import { OrderConfirmComponent } from './components/order-confirm/order-confirm.component';
+import { OrderDetailComponent } from './components/detail-order/order.detail.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
-import { 
+import { ReactiveFormsModule } from '@angular/forms';
+import {
   provideHttpClient, 
-  HTTP_INTERCEPTORS 
+  HTTP_INTERCEPTORS, 
+  HttpClientModule
 } from '@angular/common/http';
 import { TokenInterceptor } from './interceptors/token.interceptors';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app/app.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 @NgModule({
@@ -22,11 +27,19 @@ import { TokenInterceptor } from './interceptors/token.interceptors';
     HomeComponent, 
     HeaderComponent,
     FooterComponent, 
-    DetailProductComponent, OrderComponent, OrderConfirmComponent, LoginComponent, RegisterComponent
+    DetailProductComponent, 
+    OrderComponent, 
+    OrderDetailComponent, 
+    LoginComponent, 
+    RegisterComponent, 
+    AppComponent, UserProfileComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [provideHttpClient(),
     {
@@ -36,10 +49,11 @@ import { TokenInterceptor } from './interceptors/token.interceptors';
     }
   ],
   bootstrap: [
-    HomeComponent,
+    AppComponent,
+    //HomeComponent,
     //DetailProductComponent,
-    // OrderComponent,
-    //OrderConfirmComponent,
+    //OrderComponent,
+    //OrderDetailComponent,
     //LoginComponent,
     //RegisterComponent
   ]
